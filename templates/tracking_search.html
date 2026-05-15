@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0">
+
+  <title>Tracking Order</title>
+
+  <style>
+
+    body{
+
+      font-family: Arial;
+
+      background: #f5f6fa;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      height: 100vh;
+
+      margin: 0;
+
+    }
+
+    .box{
+
+      background: white;
+
+      padding: 40px;
+
+      border-radius: 20px;
+
+      width: 400px;
+
+      box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+
+      text-align: center;
+
+    }
+
+    h1{
+
+      margin-bottom: 10px;
+
+    }
+
+    p{
+
+      color: grey;
+
+      margin-bottom: 25px;
+
+    }
+
+    input{
+
+      width: 100%;
+
+      padding: 15px;
+
+      border-radius: 10px;
+
+      border: 1px solid #ddd;
+
+      margin-bottom: 20px;
+
+      font-size: 16px;
+
+    }
+
+    button{
+
+      width: 100%;
+
+      padding: 15px;
+
+      border: none;
+
+      border-radius: 10px;
+
+      background: #5B5FEF;
+
+      color: white;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>
+      TRACKING ORDER
+    </h1>
+
+    <p>
+      Masukkan kode order anda
+    </p>
+
+    <form action="/tracking-result"
+          method="POST">
+
+      <input
+        type="text"
+        name="kode_order"
+        placeholder="Contoh: ORD2026010"
+        required
+      >
+
+      <button type="submit">
+        CEK STATUS
+      </button>
+
+    </form>
+
+  </div>
+
+</body>
+
+</html>
