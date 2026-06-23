@@ -250,13 +250,21 @@ Order - WebKonveksi
 
                                 <span>Estimasi Harga</span>
 
-                                <span class="fw-bold text-success" id="totalHarga">
+                                <span
+                                    class="fw-bold text-success"
+                                    id="totalHarga">
 
                                     Rp 0
 
                                 </span>
 
                             </div>
+
+                            <input
+                                type="hidden"
+                                name="harga"
+                                id="hargaInput">
+                            
 
                         </div>
 
@@ -525,6 +533,10 @@ Order - WebKonveksi
                 "Rp " +
                 totalHargaValue.toLocaleString("id-ID");
 
+            document.getElementById(
+                "hargaInput"
+            ).value = totalHargaValue;
+
             return;
         }
 
@@ -590,6 +602,10 @@ Order - WebKonveksi
         totalHarga.innerHTML =
             "Rp " +
             totalHargaValue.toLocaleString("id-ID");
+            
+        document.getElementById(
+            "hargaInput"
+        ).value = totalHargaValue;
 
     }
 

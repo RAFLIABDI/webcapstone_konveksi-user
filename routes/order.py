@@ -133,6 +133,12 @@ def order():
             "catatan"
         )
 
+        harga = int(
+            request.form.get(
+                "harga"
+            ) or 0
+        )
+
         jumlah = 0
         variasi = []
 
@@ -417,6 +423,8 @@ def order():
 
             "file_desain": nama_file,
 
+            "harga": harga,
+
             "status": "pending",
 
             "otp": otp,
@@ -646,6 +654,29 @@ def api_orders():
                 order.get(
                     "status"
                 ),
+            
+            "variasi":
+                order.get(
+                    "variasi",
+                    []
+                ),
+            
+            "catatan":
+                order.get(
+                    "catatan",
+                    ""
+                ),
+
+            "file_desain":
+                order.get(
+                    "file_desain"
+                ),
+            
+            "harga":
+            order.get(
+                "harga",
+                0
+            ),
 
             "created_at": str(
 
