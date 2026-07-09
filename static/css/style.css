@@ -1,0 +1,12 @@
+.nav-logo {
+    height: 40px;      /* Sesuaikan tinggi logo agar pas dengan navbar */
+    width: auto;       /* Biarkan lebar mengikuti proporsi */
+    object-fit: contain;
+}
+
+/* Opsional: Agar tulisan WebKonveksi tetap terlihat tebal dan rapi */
+.navbar-brand span {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #6f42c1;    /* Warna ungu sesuai tema Anda */
+}

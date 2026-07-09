@@ -8,6 +8,9 @@ from extensions import mail
 # auth
 from routes.auth import auth_bp
 
+# stok
+from routes.stok import stok_bp
+
 # Database
 from models.database import mongo
 
@@ -15,6 +18,7 @@ from models.database import mongo
 from routes.home import home_bp
 from routes.order import order_bp
 from routes.tracking import tracking_bp
+from routes.ai import ai_bp
 
 # upload desain
 from flask import send_from_directory
@@ -38,6 +42,8 @@ app.register_blueprint(home_bp)
 app.register_blueprint(order_bp)
 app.register_blueprint(tracking_bp)
 app.register_blueprint(auth_bp)
+app.register_blueprint(stok_bp)
+app.register_blueprint(ai_bp)
 
 @app.route("/test-db")
 def test_db():

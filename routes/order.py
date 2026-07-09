@@ -833,6 +833,49 @@ def update_status(id):
 
     })
 
+
+# =========================
+# DELETE ORDER
+# =========================
+@order_bp.route(
+    "/api/orders/<id>",
+    methods=["DELETE"]
+)
+def delete_order(id):
+
+    result = mongo.db.orders.delete_one({
+
+        "_id": ObjectId(id)
+
+    })
+
+    if result.deleted_count == 0:
+
+        return jsonify({
+
+            "success": False,
+
+            "message": "Order tidak ditemukan"
+
+        }),404
+
+    save_log(
+
+        f"Hapus order {id}",
+
+        request.remote_addr
+
+    )
+
+    return jsonify({
+
+        "success": True,
+
+        "message": "Order berhasil dihapus"
+
+    })
+
+
 # =========================
 # SUCCESS
 # =========================
