@@ -10,3 +10,34 @@
     font-size: 1.5rem;
     color: #6f42c1;    /* Warna ungu sesuai tema Anda */
 }
+
+/* ===========================
+   TREND YOUTUBE
+=========================== */
+
+.trend-card{
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    transition:.3s;
+    height:100%;
+}
+
+.trend-card:hover{
+    transform:translateY(-5px);
+}
+
+.trend-title{
+    font-size:18px;
+    font-weight:600;
+    color:#1F2937;
+}
+
+.badge-keyword{
+    background:#7C3AED;
+    color:#fff;
+    padding:8px 14px;
+    border-radius:50px;
+    font-size:13px;
+}

@@ -32,8 +32,11 @@ mail.init_app(app)
 app.config["UPLOAD_FOLDER"] = "uploads"
 
 # MongoDB Config
+# MongoDB Config
+# Kode yang salah (SyntaxError):
+# MongoDB Config (Gunakan satu baris ini saja)
+# MongoDB Config
 app.config["MONGO_URI"] = Config.MONGO_URI
-
 # Init MongoDB
 mongo.init_app(app)
 

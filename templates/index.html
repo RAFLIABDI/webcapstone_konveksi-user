@@ -234,6 +234,46 @@
         </div>
     </section>
 
+        <h2 class="section-title">
+            📊 Analisis Barang Populer
+        </h2>
+
+        <p class="text-center text-muted mb-4">
+
+    Terakhir diperbarui :
+
+    {% if last_update %}
+        {{ last_update.strftime("%d %B %Y %H:%M WIB") }}
+    {% else %}
+        Belum ada data
+    {% endif %}
+
+</p>
+
+        <div class="row">
+
+            <div class="col-lg-6">
+
+                <div class="card shadow-sm p-3">
+                    <canvas id="barChart"></canvas>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="card shadow-sm p-3">
+                    <canvas id="pieChart"></canvas>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
     <!-- Produk -->
     <section class="py-5">
 
@@ -370,7 +410,93 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const labels = JSON.parse('{{ labels | tojson | safe }}');
+const values = JSON.parse('{{ values | tojson | safe }}');
+
+// ======================
+// Bar Chart
+// ======================
+
+new Chart(document.getElementById("barChart"),{
+
+    type:"bar",
+
+    data:{
+
+        labels:labels,
+
+        datasets:[{
+
+            label:"Jumlah Video",
+
+            data:values,
+
+backgroundColor:[
+    "#2563EB",
+    "#10B981",
+    "#F59E0B",
+    "#EF4444",
+    "#8B5CF6",
+    "#06B6D4"
+]
+
+        }]
+
+    },
+
+    options:{
+        responsive:true,
+        plugins:{
+            legend:{
+                display:false
+            }
+        }
+    }
+
+});
+
+// ======================
+// Doughnut Chart
+// ======================
+
+new Chart(document.getElementById("pieChart"),{
+
+    type:"doughnut",
+
+    data:{
+
+        labels:labels,
+
+        datasets:[{
+
+            data:values,
+
+            backgroundColor:[
+    "#2563EB",
+    "#10B981",
+    "#F59E0B",
+    "#EF4444",
+    "#8B5CF6",
+    "#06B6D4"
+]
+
+        }]
+
+    },
+
+    options:{
+        responsive:true
+    }
+
+});
+
+</script>
 
 </body>
 
